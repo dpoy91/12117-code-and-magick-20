@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
-* Студент: [Дмитрий Полушкин](https://up.htmlacademy.ru/javascript/20/user/12117).
-* Наставник: `Неизвестно`.
+* Студент: [Дмитрий Полушкин](https://htmlacademy.ru/profile/dpoy91)
+* Наставник: [Артём Рудов](https://htmlacademy.ru/profile/artrudov)
 
 ---
 
