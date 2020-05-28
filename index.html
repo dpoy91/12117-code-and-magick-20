@@ -182,14 +182,16 @@
 </template>
 
 <script>
+  var WIZARD_HEIGHT = 1.337 * wizardWidth;
+  var DOWNWIND_SPEED = 5;
+  var UPWIND_SPEED = 2;
+
   var fireballSize = 22;
   var wizardMoveSpeed = 3;
   var wizardWidth = 70;
 
-  var WIZARD_HEIGHT = 1.337 * wizardWidth;
-
   function getFireballSpeed (isWindFromLeft) {
-    return (isWindFromLeft === true ? 5 : 2);
+    return (isWindFromLeft === true ? DOWNWIND_SPEED : UPWIND_SPEED);
   }
 
   function getWizardX (gameFieldWidth) {
