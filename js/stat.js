@@ -48,7 +48,7 @@ window.renderStatistics = function (ctx, players, times) {
 
   var maxTime = getMaxElement(times);
 
-  for (var i = 0; i < players.length; i++) {
+  var renderStat = function () {
     var resultCloudX = Cloud.X + GAP + TextConf.WIDTH + (GAP + barWidth * 2) * i;
     var resultHeightBar = (BAR_HEIGHT * Math.round(times[i])) / Math.round(maxTime);
 
@@ -63,5 +63,9 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.fillRect(resultCloudX, Cloud.Y - (-Cloud.HEIGHT / 2) + TextConf.WIDTH + GAP, barWidth, -resultHeightBar);
     ctx.fillStyle = TextConf.COLOR;
     ctx.fillText(players[i], resultCloudX, Cloud.Y + BAR_HEIGHT + TextConf.WIDTH + (GAP / 2));
+  }
+
+  for (var i = 0; i < players.length; i++) {
+    renderStat();
   }
 };
