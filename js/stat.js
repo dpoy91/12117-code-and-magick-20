@@ -11,7 +11,7 @@ var Cloud = {
   Y: 50
 };
 
-var Text = {
+var TextConf = {
   WIDTH: 50,
   COLOR: '#000000'
 };
@@ -22,7 +22,7 @@ var Color = {
   WHITE: '#ffffff'
 };
 
-var barWidth = Text.WIDTH - GAP;
+var barWidth = TextConf.WIDTH - GAP;
 var doubleGap = GAP * 2;
 var cloudX = Cloud.X + doubleGap;
 
@@ -33,13 +33,13 @@ var renderCloud = function (ctx, x, y, color) {
 
 var getMaxElement = function getMaxOfArray(arr) {
   return Math.max.apply(null, arr);
-}
+};
 
 window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, Cloud.X + GAP, doubleGap, Color.TRANSPARENT);
   renderCloud(ctx, Cloud.X, GAP, Color.WHITE);
 
-  ctx.fillStyle = Text.COLOR;
+  ctx.fillStyle = TextConf.COLOR;
 
   ctx.font = '16px PT Mono';
   ctx.textBaseline = 'hanging';
@@ -49,7 +49,7 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < players.length; i++) {
-    var resultCloudX = Cloud.X + GAP + Text.WIDTH + (GAP + barWidth * 2) * i
+    var resultCloudX = Cloud.X + GAP + TextConf.WIDTH + (GAP + barWidth * 2) * i;
     var resultHeightBar = (BAR_HEIGHT * Math.round(times[i])) / Math.round(maxTime);
 
     ctx.fillText(Math.round(times[i]), resultCloudX, Cloud.Y + BAR_HEIGHT - resultHeightBar + FONT_GAP + GAP);
@@ -60,8 +60,8 @@ window.renderStatistics = function (ctx, players, times) {
       ctx.fillStyle = 'hsl(240, ' + Math.floor(Math.random() * 100) + '%, 50%)';
     }
 
-    ctx.fillRect(resultCloudX, Cloud.Y - (-Cloud.HEIGHT / 2) + Text.WIDTH + GAP, barWidth, -resultHeightBar);
-    ctx.fillStyle = Text.COLOR;
-    ctx.fillText(players[i], resultCloudX, Cloud.Y + BAR_HEIGHT + Text.WIDTH + (GAP / 2));
+    ctx.fillRect(resultCloudX, Cloud.Y - (-Cloud.HEIGHT / 2) + TextConf.WIDTH + GAP, barWidth, -resultHeightBar);
+    ctx.fillStyle = TextConf.COLOR;
+    ctx.fillText(players[i], resultCloudX, Cloud.Y + BAR_HEIGHT + TextConf.WIDTH + (GAP / 2));
   }
 };
