@@ -68,9 +68,9 @@ var randomWizardsArr = getRandomWizardsArr();
 var renderFragment = function () {
   var fragment = document.createDocumentFragment();
 
-  randomWizardsArr.forEach(function(item){
+  randomWizardsArr.forEach(function (item) {
     fragment.appendChild(item);
-  })
+  });
 
   similarListElement.appendChild(fragment);
 };
